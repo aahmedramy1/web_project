@@ -26,11 +26,12 @@ const App = ({ isImage }) => {
         <>
             <NavBar />
             <div className=" flex  justify-center  h-screen  items-center  w-full flex-col gap-6" >
-                <div className="flex flex-col items-end">
-                    <div className=" text-4xl ">
+                <div className="flex flex-col  justify-center items-center gap-2">
+                    <div><iframe src="https://giphy.com/embed/2kXLNQypdX9O1A3zxX" width="100%" height="100%" title='test' frameBorder="0" className="giphy-embed" allowFullScreen></iframe></div>
+                    <div className=" text-5xl font-bold ">
                         HASO
                     </div>
-                    <div className=" text-md ">
+                    <div className=" text-md   self-end">
                         {isImage ? "Images" : "Web"}
                     </div>
                 </div>
