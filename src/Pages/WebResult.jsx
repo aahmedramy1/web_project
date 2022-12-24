@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { MutatingDots } from "react-loader-spinner";
 
 const WebResult = () => {
   const { query } = useParams();
@@ -32,7 +33,22 @@ const WebResult = () => {
     return response.data.webPages;
   };
   const { data, isLoading, isError } = useQuery("webResult", fetchWebResult);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div className=" flex w-full h-screen justify-center items-center ">
+        <MutatingDots
+          height="100"
+          width="100"
+          color="#4fa94d"
+          secondaryColor="#4fa94d"
+          radius="12.5"
+          ariaLabel="mutating-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
   if (isError) return <div>Error</div>;
 
   return (
