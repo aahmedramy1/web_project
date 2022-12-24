@@ -49,7 +49,12 @@ const WebResult = () => {
         />
       </div>
     );
-  if (isError) return <div>Error</div>;
+  if (isError)
+    return (
+      <div className=" flex justify-center items-center w-full h-screen  font-bold text-2xl">
+        An Error Has Occured, Please Try Again Later!
+      </div>
+    );
 
   return (
     <div className=" w-full flex flex-col justify-center items-center  gap-6  mt-9">
